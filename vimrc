@@ -86,10 +86,11 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Theme nord-vim
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 "toggle terminal
 Plug 'lkebin/vim-terwin'
-
+"demus theme
+Plug 'ajmwagar/vim-deus'
 
 " Initialize plugin system
 call plug#end()
@@ -117,8 +118,19 @@ let g:plug_window = 'noautocmd vertical topleft new'
 "cerrar vim si cierro archivos y solo queda nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "cerrar vim si cierro archivos y solo queda nerdtree
 "Nord-vim
-colorscheme nord
-set t_Co=256
+"colorscheme nord
+"set t_Co=256
 "toggle terminal
 nmap <F7> :TerWinToggle <CR>
 let g:TerWinSize = 20
+
+"demus theme
+set t_Co=256
+set termguicolors
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark    " Setting dark mode
+colorscheme deus
+let g:deus_termcolors=256
