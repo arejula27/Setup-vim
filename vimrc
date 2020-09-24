@@ -72,6 +72,9 @@ set statusline +=%2*/%L%*               "total lines
 set statusline+=\ %l:%c
 "set statusline+=\
 set laststatus=2
+"""""""""""""""""""""""""""""""
+"Open a terminal botton
+"""""""""""""""""""""""""""""""
 """""""""""""""""""""""
 "Plugins"
 """"""""""""""""""""""
@@ -84,6 +87,10 @@ Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Theme nord-vim
 Plug 'arcticicestudio/nord-vim'
+"toggle terminal
+Plug 'lkebin/vim-terwin'
+
+
 " Initialize plugin system
 call plug#end()
 
@@ -100,13 +107,18 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 "Shortkey
-map <C-n> :NERDTreeToggle<CR>
+map <F6> :NERDTreeToggle<CR>
 
 "ver archivos ocultos
 let NERDTreeShowHidden=1
 
-let g:plug_window = 'noautocmd vertical topleft new'
 
+let g:plug_window = 'noautocmd vertical topleft new'
+"cerrar vim si cierro archivos y solo queda nerdtree
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "cerrar vim si cierro archivos y solo queda nerdtree
 "Nord-vim
 colorscheme nord
 set t_Co=256
+"toggle terminal
+nmap <F7> :TerWinToggle <CR>
+let g:TerWinSize = 20
