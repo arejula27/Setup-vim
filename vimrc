@@ -89,8 +89,8 @@ Plug 'preservim/nerdtree' |
 "Plug 'arcticicestudio/nord-vim'
 "toggle terminal
 Plug 'lkebin/vim-terwin'
-"demus theme
-Plug 'ajmwagar/vim-deus'
+"demus Ocean
+Plug 'mhartington/oceanic-next'
 
 " Initialize plugin system
 call plug#end()
@@ -124,13 +124,9 @@ let g:plug_window = 'noautocmd vertical topleft new'
 nmap <F7> :TerWinToggle <CR>
 let g:TerWinSize = 20
 
-"demus theme
-set t_Co=256
-set termguicolors
+"oceanic theme
+if (has("termguicolors"))
+ set termguicolors
+ endif
 
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-set background=dark    " Setting dark mode
-colorscheme deus
-let g:deus_termcolors=256
+colorscheme OceanicNext
