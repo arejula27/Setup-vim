@@ -89,9 +89,10 @@ Plug 'preservim/nerdtree' |
 "Plug 'arcticicestudio/nord-vim'
 "toggle terminal
 Plug 'lkebin/vim-terwin'
-"demus Ocean
-Plug 'mhartington/oceanic-next'
-
+"nord theme
+Plug 'arcticicestudio/nord-vim'
+"vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Initialize plugin system
 call plug#end()
 
@@ -128,5 +129,6 @@ let g:TerWinSize = 20
 if (has("termguicolors"))
  set termguicolors
  endif
-
-colorscheme OceanicNext
+Plug 'arcticicestudio/nord-vim'
+"go-vim format and imports al guardar
+let g:go_fmt_command = "goimports"
