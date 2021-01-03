@@ -20,6 +20,8 @@ set smarttab
 " when creating a new line, copy the indentation from the line above
 set autoindent
 
+"Allwos u to use the mouse
+set mouse=a
 """""""""""""""""""""""""""""""""""""
 " Search
 """""""""""""""""""""""""""""""""""""
@@ -94,6 +96,9 @@ Plug 'arcticicestudio/nord-vim'
 "vim-go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Initialize plugin system
+
+"SmoothScroll
+Plug 'terryma/vim-smooth-scroll'
 call plug#end()
 
 """"""""""""""""""""
@@ -132,3 +137,27 @@ if (has("termguicolors"))
 Plug 'arcticicestudio/nord-vim'
 "go-vim format and imports al guardar
 let g:go_fmt_command = "goimports"
+
+
+
+function SmoothScroll(up)
+    if a:up
+        let scrollaction="^Y"
+    else
+        let scrollaction="^E"
+    endif
+    exec "normal " . scrollaction
+    redraw
+    let counter=1
+    while counter<&scroll
+        let counter+=1
+        sleep 10m
+        redraw
+        exec "normal " . scrollaction
+    endwhile
+endfunction
+
+nnoremap <C-U> :call SmoothScroll(1)<Enter>
+nnoremap <C-D> :call SmoothScroll(0)<Enter>
+inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
+inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
