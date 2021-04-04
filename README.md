@@ -1,1 +1,2 @@
-# Setup-vim
+# Dot-files
+My personal fot files configuration
