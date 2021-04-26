@@ -12,7 +12,7 @@ My personal dot files configuration
 
 
 ## Vim
- - **Config file**: [.vimrc] (https://github.com/arejula27/Dot-files/blob/master/.vimrc)
+ - **Config file**: [.vimrc](https://github.com/arejula27/Dot-files/blob/master/.vimrc)
  - **Plugin manager**: [vim-plug](https://github.com/junegunn/vim-plug)
  - **Plugins**
     -   [Coc vim](https://github.com/neoclide/coc.nvim)
