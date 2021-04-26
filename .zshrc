@@ -32,7 +32,7 @@ function git_branch_name()
   then
     :
   else
-    echo '('$branch')'
+    echo '('$branch') '
   fi
 }
 
@@ -40,7 +40,7 @@ function git_branch_name()
 setopt prompt_subst
 
 
-PROMPT='%(?.%F{green}➜ .%F{red}➜ )%f %B%F{cyan}%1~%f%b %B%F{219}$(git_branch_name)%f%b  %# '
+PROMPT='%(?.%F{green}➜ .%F{red}➜ )%f %B%F{cyan}%1~%f%b %B%F{219}$(git_branch_name)%f%b%# '
 
 #Kubbernetes
    alias k=kubectl 
