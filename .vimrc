@@ -87,18 +87,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
-" Theme nord-vim
-"Plug 'arcticicestudio/nord-vim'
-"toggle terminal
-Plug 'lkebin/vim-terwin'
-"nord theme
-Plug 'arcticicestudio/nord-vim'
-"vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Initialize plugin system
 
 "SmoothScroll
 Plug 'terryma/vim-smooth-scroll'
+
+
 call plug#end()
 
 """"""""""""""""""""
@@ -121,22 +114,7 @@ let NERDTreeShowHidden=1
 
 
 let g:plug_window = 'noautocmd vertical topleft new'
-"cerrar vim si cierro archivos y solo queda nerdtree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "cerrar vim si cierro archivos y solo queda nerdtree
-"Nord-vim
-"colorscheme nord
-"set t_Co=256
-"toggle terminal
-nmap <F7> :TerWinToggle <CR>
-let g:TerWinSize = 20
 
-"oceanic theme
-if (has("termguicolors"))
- set termguicolors
- endif
-Plug 'arcticicestudio/nord-vim'
-"go-vim format and imports al guardar
-let g:go_fmt_command = "goimports"
 
 
 
