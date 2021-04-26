@@ -3,7 +3,7 @@ My personal dot files configuration
 
 ## Terminal 
  - **Terminal emulator**: terminator
- - **Terminal emulator theme**: material palenight   (source:https://github.com/EliverLara/terminator-themes)
+ - **Terminal emulator theme**: [material palenight](https://github.com/EliverLara/terminator-themes)
  - **Blur**: 0,95
  - **Shell**: zsh
  - **Config file**: [.zshrc](https://github.com/arejula27/Dot-files/blob/master/.zshrc)
